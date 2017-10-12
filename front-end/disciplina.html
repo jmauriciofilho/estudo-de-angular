@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title>Cadastro Disciplina</title>		
+</head>
+<body>
+	
+	<form name="formDisciplinas" class="p-2">
+	<label>Código</label>
+	<input type="text" class="form-control w-50" name="codigo" ng-model="disciplina.codigo">
+
+	<label>Nome</label>
+	<input type="text" class="form-control w-50" name="nome" ng-model="disciplina.nome">
+    <div class="p-2">
+        <button class="btn btn-primary p-2" ng-click="gravar()">Gravar</button>
+    </div>
+
+	</form>
+
+	 <table class="table table-striped" ng-hide="listaDisciplinas.length == 0">
+		<thead>
+			<tr>				
+				<th>Código</th>	
+				<th>Nome</th>
+                <th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="disciplina in listaDisciplinas">
+				<td>					
+					<input type="text" readonly="true" ng-model="disciplina.codigo" size="5">
+				</td>	
+				<td>
+					<input type="text" readonly="true" ng-model="disciplina.nome" size="30">
+				</td>
+				<td>					
+					<button class="btn btn-danger" ng-click="remover()">Remover</button>
+				</td>
+			</tr>
+		</tbody>
+	</table> 	
+	
+</body>
+
+</html>
+

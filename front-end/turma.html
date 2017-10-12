@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Turma</title>		
+</head>
+<body>
+
+    <div class="form-group p-2">
+        <label>Semestre</label>
+        <select name="semestre" class="form-control w-50" ng-model="turma.semestre">
+            <option value="2016.1">2016.1</option>
+            <option value="2016.2">2016.2</option>
+            <option value="2017.1">2017.1</option>
+        </select>
+    </div>
+
+
+    <div class="form-group p-2">
+        <label>Disciplina</label>
+        <select name="disciplina" class="form-control w-50" ng-model="turma.disciplina">
+            <option value="001">001 - Tec. Internet I</option>
+            <option value="001">002 - Redes I</option>
+            <option value="001">003 - Arquitetura de Software</option>
+        </select>
+    </div>
+
+    <div class="p-2">
+        <button class="btn btn-primary p-2" ng-click="gravar()">Gravar</button>
+    </div>
+
+	 <table class="table table-striped" ng-hide="listaTurmas.length == 0">
+		<thead>
+			<tr>				
+				<th>Semestre</th>	
+				<th>Disciplina</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="turma in listaTurmas">
+				<td>					
+					<input type="text" size="5"  ng-model="turma.semestre">
+				</td>	
+				<td>
+					<input type="text" size="30" ng-model="turma.disciplina">
+				</td>
+				<td>					
+					<button class="btn btn-danger" ng-click="remover()">Remover</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+
+    <title>Cadastro De Alunos</title>
+</head>
+<body>
+
+<div class="form-group p-2">
+    <label>Matrícula</label>
+    <input type="text" ng-model="aluno.matricula" class="form-control w-50" id="exampleInputMatricula">
+</div>
+
+
+<div class="form-group p-2">
+    <label>Nome</label>
+    <input type="text" ng-model="aluno.nome" class="form-control w-50" id="exampleInputNome">
+</div>
+
+<div class="form-group p-2">
+    <label>Turma</label>
+    <select name="disciplina" ng-model="aluno.turma" class="form-control w-50">
+        <option value="001">001 - Tec. Internet I</option>
+        <option value="001">002 - Redes I</option>
+        <option value="001">003 - Arquitetura de Software</option>
+    </select>
+</div>
+
+<div class="p-2">
+    <button ng-click="gravar()" class="btn btn-primary p-2">Gravar</button>
+</div>
+
+<div>
+    <table class="table" ng-hide="listaAlunos.length == 0">
+        <thead>
+        <tr>
+            <th>Matrícula</th>
+            <th>Nome</th>
+            <th>Turma</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  ng-repeat="aluno in listaAlunos">
+            <td>
+                <input type="text" ng-model="aluno.matricula" class="w-10" size="7" >
+            </td>
+            <td>
+                <input type="text" ng-model="aluno.nome" class="w-20" size="30" >
+            </td>
+            <td>
+                <input type="text" ng-model="aluno.turma" class="w-20" size="30" >
+            </td>
+            <td>
+                <button class="btn btn-danger" ng-click="remover()">Remover</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
